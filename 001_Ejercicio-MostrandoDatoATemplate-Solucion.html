@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mostrando datos en el template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="tarea">
+        <!-- 1) Llene el elemento <p> con los datos de su nombre y edad-->
+        <p>VueJS es muy cool - {{ nombre }} ({{ edad }})</p>
+
+        <!-- 2) Muestre su edad y multipliquelo por 3-->
+        <p>Mi edad por 3: {{ edad * 3 }}</p>
+        
+        <!-- 3) Llame a una funcion que muestre un numero aleatorio entre 0 y 1-->
+        <p>Numero randomico entre 0 y 1: {{ randomico() }}</p>
+    
+        <!-- 4) Busque una imagene de Google y muestrelo con un binding en el stributo src -->
+        <img style="width:100px;height:100px" v-bind:src="imagen" alt="Mi familia">
+    
+        <!-- 5) Rellene el input con su nombre (establesca el atributo "value") -->
+        <input type="text" v-model="nombre">
+
+        <pre>{{ $data }}</pre>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#tarea',
+            data: {
+                nombre: 'Samuel Puni',
+                edad: 44,
+                imagen: 'https://cdn5.dibujos.net/dibujos/pintados/201233/familia-unida-familia-pintado-por-espinosa-9763122.jpg'
+            },
+            methods: {
+                randomico: function() {
+                    return Math.random();
+                }
+            }
+        })
+    </script>
+</body>
+</html>
