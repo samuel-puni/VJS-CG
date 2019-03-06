@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mostrando datos en el template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <!-- 1) Muestra una alerta cuando el boton es pulsado-->
+    <div>
+        <button>Muestra alerta</button>
+    </div>
+    
+    <!-- 2) Escucha el evento "keydown" y almacene el valor en una propiedad del objeto data  (Ayuda: event.target.value te da el valor)-->
+    <div>
+        <input type="text">
+        <p>{{ value }}</p>
+    </div>
+    
+    <!-- 3) Ajuste el ejercicio 2) para ejecutar si la tecla enter fue precionada en el evento "keydown"-->
+    <div>
+        <input type="text">
+        <p>{{ value }}</p>
+    </div>
+    
+</body>
+</html>

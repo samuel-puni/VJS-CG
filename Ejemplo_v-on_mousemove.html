@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>VueJS - Ejemplo V-ON:MOUSEMOVE </title>
+</head>
+<body>
+    <div id="app">
+        <h1>Ejemplo de V-ON:MOUSEMOVE</h1>
+        <button v-on:click="contar">Click me</button>
+        <p>{{ counter }}</p>
+        <hr>
+        <p v-on:mousemove="updatexy">Coordenadas dentro de P: ({{ x }},{{ y }})</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                contar: function() {
+                    this.counter++;
+                },
+                updatexy: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
