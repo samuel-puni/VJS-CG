@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <style type="text/css">
         .demo {
             width: 100px;
@@ -30,7 +30,9 @@
     <div id="app">
         <div class="demo" @click="attachRed = !attachRed" :class="divClasses" ></div>
         <div class="demo" :class="{red: attachRed}"></div>
-        <div class="demo"></div>
+        <div class="demo" :class="[color, {red: attachRed}]"></div>
+        <hr>
+        <input type="text" v-model="color">
 
         <pre>{{ $data }}</pre>
     </div>
@@ -39,7 +41,8 @@
         new Vue({
             el: '#app',
             data: {
-                attachRed: false
+                attachRed: false,
+                color: 'green'
             },
             computed: {
                 divClasses: function() {

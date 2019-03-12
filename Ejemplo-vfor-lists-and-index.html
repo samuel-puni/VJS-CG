@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Renderizado de Listas con V-FOR e indices</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(ingredient, i) in ingredients">({{ i }}) - {{ ingredient }}</li>
+        </ul>
+        <pre>{{ $data }}</pre>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                ingredients: ['meat','fruit', 'cookies'],
+                persons: [
+                    {name: 'Max', age: 27, color: 'red'},
+                    {name: 'Anna', age: 'unknown', color: 'blue'}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Renderizado Condicional Altenativo a V-IF</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="show">You can see me! <span>Hello!</span></p>
+        <p v-else>Now you see me!</p>
+        <template v-if="show">
+            <h1>Headding</h1>
+            <p>Inside a template</p>
+        </template>
+        <p>Do you also see me?</p>
+        <button @click="show=!show">Switch</button>
+
+        <pre>{{ $data }}</pre>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true
+            }
+        });
+    </script>
+</body>
+</html>
