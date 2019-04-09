@@ -10,6 +10,8 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
+        <button @click="title='Changed'">Update Title</button>
+        <button @click="destroy">Destroy</button>
     </div>
 
     <script>
@@ -43,7 +45,11 @@
             destroyed() {
                 console.log('destroyed()');
             },
-        
+            methods: {
+                destroy: function() {
+                    this.$destroy();
+                }
+            },
         });
 
     </script>
